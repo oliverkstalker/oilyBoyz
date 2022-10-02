@@ -1,3 +1,4 @@
+
 let intro = document.querySelector('.intro');
 let logo = document.querySelector('.logo-header');
 let logoSpan = document.querySelectorAll('.logo')
@@ -25,7 +26,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
         },2000);
 
         setTimeout(()=>{
-            intro.style.top = '-250vh'
+            intro.style.top = '-270vh'
         }, 2700)
     })
 
