@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
         logoSpan.forEach((span, idx)=>{
             setTimeout(()=>{
+                logo.style.left = '680px'
                 span.classList.add('active');
             }, (idx + 1) * 400)
         });
@@ -18,14 +19,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 setTimeout(()=>{
                     span.classList.remove('active');
                     span.classList.add('fade');
-                }, (idx + 1) * 50)
+                }, (idx + 1) * 160)
 
             })
         },2000);
 
         setTimeout(()=>{
-            intro.style.top = '-100vh'
-        }, 2300)
+            intro.style.left = '-250vh'
+        }, 2700)
     })
 
 })
