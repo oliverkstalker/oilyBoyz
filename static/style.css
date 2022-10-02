@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1005;
+    height: 80px;
+}
+
+
+
+.intro {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    transition: 1s;
+}
+
+
+.luck{
+    color: #ffff;
+    background: transparent;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border-radius: 200px;
+    border-color: #ffffff;
+    transition: background-color 0.5s ease-out;
+}
+.luck:hover {
+    background-image: linear-gradient(144deg, #40d9ff, #3372c4 50%, #0da1d2);
+    box-shadow: 0 5px rgb(68, 141, 180);
+    transition: 0.5s;
+    transform: translateY(4px);
+    cursor: pointer;
+}
+
+.luck:active {
+  background-image: linear-gradient(144deg, #40d9ff, #3372c4 50%, #0da1d2);
+  box-shadow: 0 5px rgb(68, 141, 180);
+  transition: 0.5s;
+  transform: translateY(4px);
+}
+
+.logo-header{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #55c7ed
+}
+
+.logo{
+    position:relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+
+.logo.fade {
+    bottom: 5px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.flexbox {
+  background: linear-gradient(155deg, #55c7ed, #8dcee4, #edf0f1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  margin: 20px;
+}
+
+.search > h3 {
+  font-weight: normal;
+}
+
+.search > h1,
+.search > h3 {
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 0 1px #0091c2;
+}
+
+.search > div {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 1px #0091c2);
+}
+
+
+
+.search > div > input {
+  color: white;
+  font-size: 16px;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: solid 3px white;
+  outline: none;
+  border-radius: 35px;
+  transition: width 1.5s;
+}
+
+#text:hover {
+    color: #efefef;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+.search > div > input::placeholder {
+  color: #efefef;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search:hover > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search:hover > div > input:focus,
+.search:hover > div > input:not(:placeholder-shown) {
+  width: 250px;
+}
