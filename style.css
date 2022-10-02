@@ -1,155 +1,212 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-
-* {
-  font-family: "Poppins", sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-header {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 1005;
-    height: 80px;
-}
-
-.intro {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #ffffff;
-    transition: 1s;
-}
-
-.luck{
-    color: #ffff;
-    background: transparent;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    border-radius: 200px;
-    border-color: #ffffff;
-    transition: background-color 0.5s ease-out;
-}
-.luck:hover {
-    background-image: linear-gradient(144deg, #40d9ff, #3372c4 50%, #0da1d2);
-    box-shadow: 0 5px rgb(68, 141, 180);
-    transition: 0.5s;
-    transform: translateY(4px);
-    cursor: pointer;
-}
-
-.luck:active {
-  background-image: linear-gradient(144deg, #40d9ff, #3372c4 50%, #0da1d2);
-  box-shadow: 0 5px rgb(68, 141, 180);
-  transition: 0.5s;
-  transform: translateY(4px);
-
-}
-
-.logo-header{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #55c7ed
-}
-
-.logo{
-    position:relative;
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
-}
-
-.logo.active{
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 0.5s;
-}
-
-
-.logo.fade {
-    bottom: 5px;
-    opacity: 0;
-    transition: ease-in-out 0.5s;
-}
-
+@import "https://fonts.googleapis.com/css?family=Catamaran";
 html, body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Catamaran', sans-serif;
 }
 
-.flexbox {
-  background: linear-gradient(155deg, #55c7ed, #8dcee4, #edf0f1);
+body {
+  --height: 50;
+  --width: 300;
+  --border: 5;
+  --speed: 0.4;
+  --ease: cubic-bezier(.85,.01,.4,.97);
+  --color-bk: #6CD4FF;
+  background: var(--color-bk);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: calc(var(--speed) * 1s);
+          transition-duration: calc(var(--speed) * 1s);
+  -webkit-transition-timing-function: var(--ease);
+          transition-timing-function: var(--ease);
+}
+body:focus-within {
+  --speed: 0.7;
+  background-color: #63C1E8;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-container {
+  width: calc(var(--width) * 1px);
+  height: calc(var(--height) * 1px);
+  position: relative;
+  cursor: pointer;
+  -webkit-transform: rotate(12deg) scale(0.7);
+          transform: rotate(12deg) scale(0.7);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  -webkit-transition-duration: calc(var(--speed) * 1s);
+          transition-duration: calc(var(--speed) * 1s);
+  -webkit-transition-timing-function: var(--ease);
+          transition-timing-function: var(--ease);
+}
+.input-container .center {
+  border: calc(var(--border) * 1px) solid white;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: calc(100% - var(--border) * 2px);
+  -webkit-transform: scalex(0);
+          transform: scalex(0);
+  -webkit-transition: inherit;
+  transition: inherit;
+  background-color: var(--color-bk);
+}
+.input-container input {
+  -webkit-transition: inherit;
+  transition: inherit;
+  width: calc(100% - var(--height));
+  height: 100%;
+  border: 0;
+  outline: 0;
+  color: white;
+  background: transparent;
+  font-size: 1.3rem;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+}
+.input-container .shadow {
+  position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.search {
-  margin: 20px;
-}
-
-.search > h3 {
-  font-weight: normal;
-}
-
-.search > h1,
-.search > h3 {
-  color: white;
-  margin-bottom: 15px;
-  text-shadow: 0 1px #0091c2;
-}
-
-.search > div {
-  display: inline-block;
-  position: relative;
-  filter: drop-shadow(0 1px #0091c2);
-}
-
-
-
-.search > div > input {
-  color: white;
-  font-size: 16px;
-  background: transparent;
-  width: 25px;
-  height: 25px;
-  padding: 10px;
-  border: solid 3px white;
-  outline: none;
-  border-radius: 35px;
-  transition: width 1.5s;
-}
-
-#text:hover {
-    color: #efefef;
-    opacity: 0;
-    transition: opacity 150ms ease-out;
-}
-
-.search > div > input::placeholder {
-  color: #efefef;
+  border-radius: 2em;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transform: scalex(0) translateY(-10px);
+          transform: scalex(0) translateY(-10px);
   opacity: 0;
-  transition: opacity 150ms ease-out;
 }
-
-.search:hover > div > input:focus::placeholder {
+.input-container:after, .input-container:before {
+  z-index: 1;
+  content: '';
+  -webkit-transition: inherit;
+  transition: inherit;
+  width: calc((var(--height) * 0.5px) - (var(--border) * 1px));
+  height: calc((var(--height) * 1px) - (var(--border) * 2px));
+  display: block;
+  top: 0;
+  border-color: white;
+  position: absolute;
+  background-color: var(--color-bk);
+  border: calc(var(--border) * 1px) solid white;
+}
+.input-container:before {
+  right: 100%;
+  border-radius: 2em 0 0 2em;
+  border-right: none;
+  -webkit-transform: translateX(calc(var(--width) * 0.5px));
+          transform: translateX(calc(var(--width) * 0.5px));
+}
+.input-container:after {
+  left: 100%;
+  border-radius: 0 2em 2em 0;
+  border-left: none;
+  -webkit-transform: translateX(calc(var(--width) * -0.5px));
+          transform: translateX(calc(var(--width) * -0.5px));
+}
+.input-container .sticks {
+  position: absolute;
+  height: calc(var(--height) * 0.5px);
+  width: 1px;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transition-duration: calc(var(--speed) * 1.25s);
+          transition-duration: calc(var(--speed) * 1.25s);
+  -webkit-transform: translateX(calc((var(--width) - var(--height)) * -0.53px)) rotate(-45deg);
+          transform: translateX(calc((var(--width) - var(--height)) * -0.53px)) rotate(-45deg);
+  z-index: 2;
+}
+.input-container .sticks:before, .input-container .sticks:after {
+  -webkit-transition: -webkit-transform calc(var(--speed) * 1s) var(--ease);
+  transition: -webkit-transform calc(var(--speed) * 1s) var(--ease);
+  transition: transform calc(var(--speed) * 1s) var(--ease);
+  transition: transform calc(var(--speed) * 1s) var(--ease), -webkit-transform calc(var(--speed) * 1s) var(--ease);
+  height: calc(var(--height) * 0.5px);
+  width: calc(var(--border) * 1px);
+  position: absolute;
+  content: '';
+  background-color: white;
+  left: calc(var(--border) * -0.5px);
+  bottom: calc(var(--height) * -0.25px);
+}
+.input-container:focus-within {
+  -webkit-transform: rotate(0deg) translatey(-10px);
+          transform: rotate(0deg) translatey(-10px);
+}
+.input-container:focus-within .center {
+  -webkit-transform: scalex(1);
+          transform: scalex(1);
+}
+.input-container:focus-within .shadow {
+  -webkit-transform: scalex(1) translateY(0px);
+          transform: scalex(1) translateY(0px);
   opacity: 1;
 }
-
-.search:hover > div > input:focus,
-.search:hover > div > input:not(:placeholder-shown) {
-  width: 250px;
+.input-container:focus-within input {
+  opacity: 1;
+}
+.input-container:focus-within:before {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.input-container:focus-within:after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.input-container:focus-within .sticks {
+  -webkit-transition-duration: calc(var(--speed) * 1s);
+          transition-duration: calc(var(--speed) * 1s);
+  -webkit-transform: translateX(calc(var(--height) * -0.1px)) translateY(0) rotate(180deg);
+          transform: translateX(calc(var(--height) * -0.1px)) translateY(0) rotate(180deg);
+}
+.input-container:focus-within .sticks:before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.input-container:focus-within .sticks:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
