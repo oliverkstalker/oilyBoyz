@@ -22,8 +22,10 @@ def Celsius_to_Fahrenheit(celsius):
 #1) Experimenting with the OpenWeatherApp API
 #Link for API by city: "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
 user_api = "9811532f09e0d432f872927e531e7223"
-city = input("Enter city name here: ")
-country = input("Enter name of Country here: ")
+destination = input("Enter in (city, country) format: ")
+city = destination.split(",")[0]
+country = destination.split(",")[1]
+country = country[1:]
 
 #using the imported CountryFunction.py file to determine the proper country Code
 countryCode = CountryFunction.CountryCodeFunction(country)
